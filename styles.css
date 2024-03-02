@@ -1,0 +1,6 @@
+.nav-image img:hover{
+    background-color: gray;
+    cursor: pointer;
+    padding: 5px;
+    border-radius:100% ;
+}

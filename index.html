@@ -4,8 +4,79 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Retro Forum</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- daisy ui -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
+    <header>
+
+        <nav class="container mx-auto w-10/12 mt-4">
+            <div class="navbar bg-base-100">
+                <div class="navbar-start">
+                  <!-- <div class="dropdown">
+                    <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
+                    </div>
+                    <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+                      <li><a>Item 1</a></li>
+                      <li>
+                        <a>Parent</a>
+                        <ul class="p-2">
+                          <li><a>Submenu 1</a></li>
+                          <li><a>Submenu 2</a></li>
+                        </ul>
+                      </li>
+                      <li><a>Item 3</a></li>
+                    </ul>
+                  </div> -->
+                  <a class="btn btn-ghost text-3xl font-bold">ReTro</a>
+                </div>
+                <div class="flex justify-end ">
+                    
+                </div>
+                <div class="nav-image navbar-end ">
+                    <div class=" flex gap-4 hover:">
+                        <img title="home" src="./images/home.png" alt="">
+                        <img title="edit" src="./images/pen.png" alt="">
+                        <img title="add" src="./images/add-user.png" alt="">
+                        <img title="report" src="./images/red-flag.png" alt="">
+                    </div>
+                    <button class="btn bg-blue-700 text-white rounded-full w-1/4">Sign In</button>
+                </div>
+              </div>
+        </nav>
+        <!-- nav section ends -->
+        <!-- banner section -->
+        <section class="container mx-auto w-10/12 mt-4 ">
+            <div>
+                <div class="hero  bg-orange-200 rounded-2xl p-10">
+                    <div class="hero-content flex justify-around ">
+                      
+                      <div>
+                        <h1 class="text-5xl font-bold">Welcome to the <br>
+                          ReTro  Forum</h1>
+                        <p class="py-6"> 
+                            Share your favorite opinion and win and wp <br>
+                            forum coffee mug!</p>
+                            <div class="flex relative">
+                                <input id="search-box" type="text" placeholder="Search here everything" class="input p-7 input-bordered w-full max-w-xs rounded-full relative" />
+                            <button id="search-btn" class="btn btn-primary rounded-full absolute right-10 top-1 w-1/4">Search</button>
+                            </div>
+                      </div>
+                      <div class="border-spacing-px shadow-2xl rounded-2xl p-7 bg-gray-100">
+                        <p>Registered Users <span>01</span> </p>
+                        <p>Forum <span class="ml-14">05</span></p> 
+                        <p>Topics <span class="ml-14">01</span> </p> 
+                        <p>Replies <span class="ml-14">01</span> </p> 
+                      </div>
+                    </div>
+                  </div>
+            </div>
+        </section>
+    </header>
     
 </body>
 </html>
