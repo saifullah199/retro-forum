@@ -16,22 +16,7 @@
         <nav class="container mx-auto w-10/12 mt-4">
             <div class="navbar bg-base-100">
                 <div class="navbar-start">
-                  <!-- <div class="dropdown">
-                    <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
-                      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
-                    </div>
-                    <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
-                      <li><a>Item 1</a></li>
-                      <li>
-                        <a>Parent</a>
-                        <ul class="p-2">
-                          <li><a>Submenu 1</a></li>
-                          <li><a>Submenu 2</a></li>
-                        </ul>
-                      </li>
-                      <li><a>Item 3</a></li>
-                    </ul>
-                  </div> -->
+                  
                   <a class="btn btn-ghost text-3xl font-bold">ReTro</a>
                 </div>
                 <div class="flex justify-end ">
@@ -63,7 +48,7 @@
                             forum coffee mug!</p>
                             <div class="flex relative">
                                 <input id="search-box" type="text" placeholder="Search here everything" class="input p-7 input-bordered w-full max-w-xs rounded-full relative" />
-                            <button id="search-btn" class="btn btn-primary rounded-full absolute right-10 top-1 w-1/4">Search</button>
+                            <button onclick="handleSearch()" id="search-btn" class="btn btn-primary rounded-full absolute right-10 top-1 w-1/4">Search</button>
                             </div>
                       </div>
                       <div class="border-spacing-px shadow-2xl rounded-2xl p-7 bg-gray-100">
@@ -86,15 +71,15 @@
                 integrated testing features allow for a streamlined</p>
                 <!-- news card -->
                 <div id="" class="flex justify-around mt-10">
-                    <div id="let-discuss" class="w-2/3">
+                    <div id="let-discuss" class="w-2/3 space-y-5">
 
                         
 
                     </div>
                     <div class="1/3">
-                        <div id="title-container" class="border bg-gray-50 rounded-xl p-5 ">
-                          <div class="flex gap-7 ">
-                            <h3 id="mark-title">Title </h3>
+                        <div id="title-container" class="border bg-gray-50 rounded-xl p-5 space-y-5 ">
+                          <div class="flex gap-7 justify-between ">
+                            <h3 id="">Title </h3>
                             <p id=""> Mark as read<span id="mark-read">(0)</span></p>
                           </div>
                         </div>

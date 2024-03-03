@@ -4,11 +4,11 @@ const loadCategory = async() =>{
     const allPost = document.getElementById("let-discuss")
     data.posts.forEach((item) => {
         const div =document.createElement("div");
-        div.innerHTML =`
+        div.innerHTML = `
         <div class="card card-side bg-base-100 shadow-xl p-3">
 
                           <div class="">
-                            <img class="w-[50px]" src="${item.image}" alt=""> <sup>${item.isActive}</sup> 
+                            <img class="w-[50px] rounded-full" src="${item.image}" alt=""> <sup>${item.isActive}</sup> 
                           </div>
                             
                             <div class="card-body">
@@ -31,7 +31,7 @@ const loadCategory = async() =>{
                                   <div class="card-actions justify-end">
                                     
                                     
-                                        <button class="btn bg-green-300"><img onclick="check('${item.title}, ${item.view_count}')" src="./images/mail.png" alt=""></button>
+                                        <button class="btn bg-green-300"><img onclick="check('${item.title},')" src="./images/mail.png" alt=""></button>
                                     
                                     
                                   </div>
@@ -40,7 +40,7 @@ const loadCategory = async() =>{
                         </div>
         `
         allPost.appendChild(div);
-        // console.log(data.posts);
+        console.log(data.posts);
     });
 }
 
@@ -55,7 +55,7 @@ const check = (text,) => {
       const p = document.createElement("p")
       p.innerText = text;
       div.appendChild(p);
-      // p.classList.add = ('border','shadow-2xl', 'rounded-2xl', 'p-5', 'bg-slate-200')
+      div.classList.add("mark-title");
       titleContainer.appendChild(div)
      
 
@@ -67,6 +67,8 @@ const check = (text,) => {
     
   
 }
+
+
 loadCategory();
 
 
@@ -84,7 +86,7 @@ const latestPost = async () => {
                 <img src="${item.cover_image}">
               </div>
               <div class="card-body items-center text-center">
-                <p> <img src="" alt="">29 January 2024</p>
+                <p> <img src="" alt="">${item.author.posted_date}</p>
                 <h2 class="card-title font-semibold">${item.title}</h2>
                 <p class="text-[14px]">${item.description}</p>
                 <div class="flex gap-8 ">
@@ -103,4 +105,15 @@ const latestPost = async () => {
     
 }
 
+
+const handleSearch =() =>{
+  const value = document.getElementById("search-box").value
+  console.log(value)
+  if(value){
+    loadCategory(value)
+  }
+  else{
+    alert("please enter a valid name")
+  }
+}
 latestPost();
