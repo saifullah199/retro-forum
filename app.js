@@ -24,14 +24,14 @@ const loadCategory = async() =>{
                                     
                                     <div class="flex justify-between">
                                         <div class="flex gap-3"><img src="./images/icons/comment.png" alt=""> <span>${item.comment_count}</span></div>
-                                        <div id="vew" class="flex gap-3"> <img src="./images/icons/view.png" alt=""> <span> ${item.view_count}</span></div>
+                                        <div id="view" class="flex gap-3"> <img src="./images/icons/view.png" alt=""> <span> ${item.view_count}</span></div>
                                         <div class="flex gap-3"><img src="./images/icons/clock.png" alt=""> <span>${item.posted_time}</span></div>
                                     </div>
 
                                   <div class="card-actions justify-end">
                                     
                                     
-                                        <button class="btn bg-green-300"><img onclick="check('${item.title},')" src="./images/mail.png" alt=""></button>
+                                        <button class="btn bg-green-300"><img onclick="check('${item.title},${item.view_count}')" src="./images/mail.png" alt=""></button>
                                     
                                     
                                   </div>
@@ -47,7 +47,7 @@ const loadCategory = async() =>{
 let totalCount =0;
 const check = (text,) => {
   
-   
+  
 
       const titleContainer = document.getElementById("title-container");
       const div = document.createElement("div")
@@ -55,10 +55,31 @@ const check = (text,) => {
       const p = document.createElement("p")
       p.innerText = text;
       div.appendChild(p);
+      
       div.classList.add("mark-title");
       titleContainer.appendChild(div)
-     
 
+
+       
+      
+      
+      const viewDiv = document.createElement("div");
+      viewDiv.classList.add("flex", "gap-3");
+      
+      const viewImg = document.createElement("img");
+      viewImg.src = "./images/icons/view.png";
+      div.appendChild(viewImg);
+      // viewDiv.appendChild(viewImg);
+      
+      
+      
+      
+      
+      div.appendChild(viewDiv);
+      
+      
+      
+      
     
       totalCount = totalCount +1 ;
       document.getElementById("mark-read").innerText = totalCount;
@@ -67,6 +88,7 @@ const check = (text,) => {
     
   
 }
+
 
 
 loadCategory();
