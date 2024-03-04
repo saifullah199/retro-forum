@@ -8,7 +8,7 @@ const loadCategory = async() =>{
         <div class="card card-side bg-base-100 shadow-xl p-3">
 
                           <div class="relative">
-                            <img class="w-[50px] rounded-full relative" src="${item.image}" alt=""> 
+                            <img class="w-[60px] lg:w-[50px] rounded-full relative" src="${item.image}" alt=""> 
                             <span class="absolute top-0 right-0 indicator-item badge ${ item.isActive ? "bg-green-500" : "bg-red-500" }"></span> 
                           </div>
                             
@@ -41,7 +41,9 @@ const loadCategory = async() =>{
                         </div>
         `
         allPost.appendChild(div);
-        console.log(data.posts);
+        // console.log(data.posts);
+
+        loadingSpinner(false);
     });
 }
 
@@ -129,20 +131,32 @@ const latestPost = async () => {
     
     
     latest.appendChild(div);
-    console.log(item)
+    // console.log(item)
    })
     
 }
 
 
 const handleSearch =() =>{
-  const value = document.getElementById("search-box").value
-  console.log(value)
-  if(value){
-    loadCategory()
-  }
-  else{
-    alert("please enter a valid name")
+  loadingSpinner(true);
+  const searchField = document.getElementById("search-box")
+  const searchText = searchField.value;
+  loadCategory(searchText);
+  
+  
+}
+const loadingSpinner = (isLoading) =>{
+  const loadingSpinnerBox =document.getElementById('loading-spinner');
+  if(isLoading){
+    loadingSpinnerBox.classList.remove('hidden')
+  }else{
+    loadingSpinnerBox.classList.add('hidden')
   }
 }
+
+// 
+  
+        
+// 
+
 latestPost();
