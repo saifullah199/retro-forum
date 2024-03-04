@@ -4,12 +4,12 @@
     
     border-radius:100% ;
 }
-/* ('border','shadow-2xl', 'rounded-2xl', 'p-5', 'bg-slate-200') */
+
 .mark-title{
     
 border: 1px solid rgb(238, 230, 230);
 box-shadow: aliceblue;
 border-radius: 15px;
 padding: 20px;
-background-color: beige;
+background-color: white;
 }

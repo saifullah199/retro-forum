@@ -7,8 +7,9 @@ const loadCategory = async() =>{
         div.innerHTML = `
         <div class="card card-side bg-base-100 shadow-xl p-3">
 
-                          <div class="">
-                            <img class="w-[50px] rounded-full" src="${item.image}" alt=""> <sup>${item.isActive}</sup> 
+                          <div class="relative">
+                            <img class="w-[50px] rounded-full relative" src="${item.image}" alt=""> 
+                            <span class="absolute top-0 right-0 indicator-item badge ${ item.isActive ? "bg-green-500" : "bg-red-500" }"></span> 
                           </div>
                             
                             <div class="card-body">
@@ -108,19 +109,25 @@ const latestPost = async () => {
                 <img src="${item.cover_image}">
               </div>
               <div class="card-body items-center text-center">
-                <p> <img src="" alt="">${item.author.posted_date}</p>
+                <div class="flex gap-3">
+                <img src="./images/calendar.png" alt="">
+                <p> ${item.author.posted_date ? item.author.posted_date : "No Publish Date"}</p>
+                </div>
                 <h2 class="card-title font-semibold">${item.title}</h2>
                 <p class="text-[14px]">${item.description}</p>
                 <div class="flex gap-8 ">
                   <div> <img class="w-[75px] rounded-full" src="${item.profile_image}" alt=""></div>
                   <div>
                     <p>${item.author.name}</p>
-                    <p>${item.author.designation}</p>
+                    <p>${item.author.designation ? item.author.designation  : "Unknown"}</p>
                   </div>
                 </div>
               </div>
             </div>
     `
+    
+    
+    
     latest.appendChild(div);
     console.log(item)
    })
@@ -132,7 +139,7 @@ const handleSearch =() =>{
   const value = document.getElementById("search-box").value
   console.log(value)
   if(value){
-    loadCategory(value)
+    loadCategory()
   }
   else{
     alert("please enter a valid name")
