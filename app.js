@@ -1,9 +1,10 @@
 const loadCategory = async() =>{
-    const response = await fetch("https://openapi.programming-hero.com/api/retro-forum/posts")
+  const response = await fetch("https://openapi.programming-hero.com/api/retro-forum/posts")
     const data = await response.json();
     const allPost = document.getElementById("let-discuss")
     data.posts.forEach((item) => {
         const div =document.createElement("div");
+        
         div.innerHTML = `
         <div class="card card-side bg-base-100 shadow-xl p-3">
 
@@ -32,7 +33,7 @@ const loadCategory = async() =>{
                                   <div class="card-actions justify-end">
                                     
                                     
-                                        <button class="btn bg-green-300"><img onclick="check('${item.title},${item.view_count}')" src="./images/mail.png" alt=""></button>
+                                        <button class="btn bg-green-300"><img onclick="check('${item.title}, ${item.view_count}')" src="./images/mail.png" alt=""></button>
                                     
                                     
                                   </div>
@@ -145,14 +146,19 @@ const handleSearch =() =>{
   
   
 }
-const loadingSpinner = (isLoading) =>{
-  const loadingSpinnerBox =document.getElementById('loading-spinner');
-  if(isLoading){
-    loadingSpinnerBox.classList.remove('hidden')
-  }else{
-    loadingSpinnerBox.classList.add('hidden')
+
+
+
+  const loadingSpinner = (isLoading) =>{
+    const loadingSpinnerBox =document.getElementById('loading-spinner');
+    if(isLoading){
+      loadingSpinnerBox.classList.remove('hidden')
+    }else{
+      loadingSpinnerBox.classList.add('hidden')
+    }
   }
-}
+  
+
 
 // 
   
